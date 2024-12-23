@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: grey;
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "a b"
+                "d b"
+                "d b"
+                "d e"
+                "d f"
+                "c f"
+                "c -";
+            grid-template-rows: 100px 50px 50px 75px 75px 75px 75px;
+        }
+
+        @media (min-width: 1000px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas:
+                    "a b c"
+                    "d b c"
+                    "d b f"
+                    "d e f"
+                    "d - -";
+                grid-template-rows: 100px 50px 50px 100px 75px;
+            }
+        }
+
+        .widget {
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .widget-1 {
+            grid-area: a;
+        }
+
+        .widget-2 {
+            grid-area: b;
+        }
+
+        .widget-3 {
+            background-color: #d1a054;
+            grid-area: c;
+        }
+
+        .widget-4 {
+            grid-area: d;
+        }
+
+        .widget-5 {
+            grid-area: e;
+        }
+
+        .widget-6 {
+            background-color: #d1a054;
+            grid-area: f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="widget widget-1">Widget 1</div>
+        <div class="widget widget-2">Widget 2</div>
+        <div class="widget widget-3">Widget 3</div>
+        <div class="widget widget-4">Widget 4</div>
+        <div class="widget widget-5">Widget 5</div>
+        <div class="widget widget-6">Widget 6</div>
+    </div>
+</body>
+
+</html>
